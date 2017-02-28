@@ -12,7 +12,7 @@ tagging Docker images, for example).
 In `package.json` (shown with optional path to Docker `.env` file--default is `./`):
 
 ```
-"name": "myapp",
+"name": "my-npm-app",
 "scripts": {
   "version": "docker-env-version ../"
 }
@@ -27,7 +27,7 @@ services:
   myapp:
     build:
       context: myapp/
-    image: "myapp:${MYAPP_VERSION}"
+    image: "myapp:${MY_NPM_APP_VERSION}"
 ```
 
 Project directory structure for this example is like:
