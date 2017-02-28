@@ -27,7 +27,7 @@ services:
   myapp:
     build:
       context: myapp/
-    image: myapp:$MYAPP_VERSION
+    image: "myapp:${MYAPP_VERSION}"
 ```
 
 Project directory structure for this example is like:
