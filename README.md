@@ -1,0 +1,43 @@
+# docker-env-version
+
+NPM `version` hook to update Docker `.env` file with package version (for use in
+tagging Docker images, for example).
+
+## INSTALLATION
+
+`npm i --save docker-env-version`
+
+## USAGE
+
+In `package.json` (shown with optional path to Docker `.env` file--default is `./`):
+
+```
+"name": "myapp",
+"scripts": {
+  "version": "docker-env-version ../"
+}
+```
+
+...and in `docker-compose.yaml` (notice the environment variable is UPPERCASE):
+
+```
+services:
+  myapp:
+    build:
+      context: myapp/
+    image: myapp:$MYAPP_VERSION
+```
+
+Project directory structure for this example is like:
+
+```
+myapp/
+  dist/
+  src/
+  Dockerfile
+  package.json
+docker-compose.yaml
+```
+
+...and in such an example, `docker-env-version` should be installed in `myapp`,
+not in root Docker project (that might not be true in your case).
