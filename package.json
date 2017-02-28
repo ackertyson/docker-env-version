@@ -4,5 +4,9 @@
   "description": "NPM version hook to update Docker .env file with package version tag",
   "bin": "./index.bash",
   "author": "tyson@devmode.com",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ackertyson/docker-env-version.git"
+  }
 }
