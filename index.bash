@@ -22,8 +22,8 @@ else
   touch $BASEDIR/.env
 fi
 
-sed -i.bak /^${PACKAGE}_VERSION/d $BASEDIR/.env # remove existing version var
-rm $BASEDIR/.env.bak # kill sed backup file
+sed /^${PACKAGE}_VERSION=/d $BASEDIR/.env > $BASEDIR/.tmp.docker-env-version # remove existing version var
+mv $BASEDIR/.tmp.docker-env-version $BASEDIR/.env # kill sed-generated file
 
 echo "${PACKAGE}_VERSION=$npm_package_version" >> $BASEDIR/.env # add new version var
 
