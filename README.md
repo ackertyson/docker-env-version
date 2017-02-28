@@ -5,7 +5,7 @@ tagging Docker images, for example).
 
 ## INSTALLATION
 
-`npm i --save docker-env-version`
+`npm i --save-dev docker-env-version`
 
 ## USAGE
 
@@ -18,7 +18,8 @@ In `package.json` (shown with optional path to Docker `.env` file--default is `.
 }
 ```
 
-...and in `docker-compose.yaml` (notice the environment variable is UPPERCASE):
+...and in `docker-compose.yaml` (note that environment variable is uppercase
+PACKAGENAME_VERSION):
 
 ```
 services:
@@ -37,6 +38,7 @@ myapp/
   Dockerfile
   package.json
 docker-compose.yaml
+.env
 ```
 
 ...and in such an example, `docker-env-version` should be installed in `myapp`,
