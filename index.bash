@@ -7,7 +7,8 @@ else # no .env path specified; use PWD
   BASEDIR=.
 fi
 
-PACKAGE=`echo $npm_package_name | tr [:lower:] [:upper:]` # UPPERCASE package name
+# UPPERCASE package name, replace nonalphanumeric chars with '_'
+PACKAGE=`echo $npm_package_name | tr [:lower:] [:upper:] | sed 's/[^a-zA-Z0-9]/_/g'`
 
 if [ ! -f $BASEDIR/.env ] # make sure .env file exists
 then

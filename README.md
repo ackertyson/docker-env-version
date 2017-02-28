@@ -19,7 +19,8 @@ In `package.json` (shown with optional path to Docker `.env` file--default is `.
 ```
 
 ...and in `docker-compose.yaml` (note that environment variable is uppercase
-PACKAGENAME_VERSION):
+PACKAGENAME_VERSION and all nonalphanumeric characters in PACKAGENAME will be
+replaced with underscore):
 
 ```
 services:
