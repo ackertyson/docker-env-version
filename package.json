@@ -1,6 +1,6 @@
 {
   "name": "docker-env-version",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "NPM version hook to update Docker .env file with package version tag",
   "bin": "./index.bash",
   "author": "tyson@devmode.com",
