@@ -9,20 +9,22 @@ tagging Docker images, for example).
 
 ## USAGE
 
-In `package.json` (shown with optional path to Docker `.env` file--default is `./`):
+In `package.json` (shown with optional path to Docker `.env` file--default is `./.env`):
 
 ```
 "name": "my-npm-app",
 "scripts": {
-  "version": "docker-env-version ../"
+  "version": "docker-env-version ../.env"
 }
 ```
 
-...and in `docker-compose.yaml` (note that environment variable is uppercase
+And in `docker-compose.yaml` (note that environment variable is uppercase
 PACKAGENAME_VERSION and all nonalphanumeric characters in PACKAGENAME will be
 replaced with underscore):
 
 ```
+version: '2'
+
 services:
   myapp:
     build:
@@ -30,7 +32,7 @@ services:
     image: "myapp:${MY_NPM_APP_VERSION}"
 ```
 
-Project directory structure for this example is like:
+Project directory structure for this example looks like:
 
 ```
 myapp/
